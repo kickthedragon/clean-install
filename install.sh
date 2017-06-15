@@ -54,25 +54,22 @@ case "$OSTYPE" in
     hdiutil mount Discord.dmg
     sudo cp -R /Volumes/Discord/Discord.app /Applications
     hdiutil unmount /Volumes/Discord
-    rm -rf ~/Downloads/Discord.dmg
     echo "installing google chrome"
     wget -O googlechrome.dmg https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
     hdiutil mount googlechrome.dmg
     sudo cp -R "/Volumes/Google Chrome/Google Chrome.app" /Applications
     hdiutil unmount "/Volumes/Google Chrome"
-    rm -rf ~/Downloads/googlechrome.dmg
     echo "installing firefox"
     wget -O "~/Downloads/Firefox 54.0.dmg" https://download.mozilla.org/?product=firefox-54.0-SSL&amp;os=osx&amp;lang=en-US
     hdiutil mount "~/Downloads/Firefox 54.0.dmg"
     sudo cp -R "/Volumes/Firefox/Firefox.app" /Applications
     hdiutil unmount "/Volumes/Firefox"
-    rm -rf "~/Downloads/Firefox 54.0.dmg"
     echo "installing mysql workbench"
     wget -O ~/Downloads/mysql-workbench-community-6.3.9-osx-x86_64.dmg https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-osx-x86_64.dmg
     hdiutil mount ~/Downloads/mysql.dmg
     sudo cp -R "/Volumes/MySQL Workbench 6.3.9.CE/MySQLWorkbench.app" /Applications
     hdiutil unmount "/Volumes/MySQL Workbench 6.3.9.CE"
-    rm -rf ~/Downloads/mysql-workbench-community-6.3.9-osx-x86_64.dmg
+    rm -rf ~/Downloads/*.dmg
   ;;
   linux*)   echo "LINUX" ;;
   bsd*)     echo "BSD" ;;
