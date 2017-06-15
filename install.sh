@@ -62,17 +62,17 @@ case "$OSTYPE" in
     hdiutil unmount "/Volumes/Google Chrome"
     rm -rf ~/Downloads/googlechrome.dmg
     echo "installing firefox"
-    wget -O firefox.dmg https://download.mozilla.org/?product=firefox-54.0-SSL&amp;os=osx&amp;lang=en-US
-    hdiutil mount firefox.dmg
+    wget -O "~/Downloads/Firefox 54.0.dmg" https://download.mozilla.org/?product=firefox-54.0-SSL&amp;os=osx&amp;lang=en-US
+    hdiutil mount "~/Downloads/Firefox 54.0.dmg"
     sudo cp -R "/Volumes/Firefox/Firefox.app" /Applications
     hdiutil unmount "/Volumes/Firefox"
-    rm -rf ~/Downloads/firefox.dmg
+    rm -rf "~/Downloads/Firefox 54.0.dmg"
     echo "installing mysql workbench"
-    wget -O msql.dmg https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-osx-x86_64.dmg
-    hdiutil mount mysql.dmg
+    wget -O ~/Downloads/mysql-workbench-community-6.3.9-osx-x86_64.dmg https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-osx-x86_64.dmg
+    hdiutil mount ~/Downloads/mysql.dmg
     sudo cp -R "/Volumes/MySQL Workbench 6.3.9.CE/MySQLWorkbench.app" /Applications
     hdiutil unmount "/Volumes/MySQL Workbench 6.3.9.CE"
-    rm -rf ~/Downloads/mysql.dmg
+    rm -rf ~/Downloads/mysql-workbench-community-6.3.9-osx-x86_64.dmg
   ;;
   linux*)   echo "LINUX" ;;
   bsd*)     echo "BSD" ;;
