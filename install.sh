@@ -31,17 +31,28 @@ case "$OSTYPE" in
     echo "installing pip"
     curl -O https://bootstrap.pypa.io/get-pip.py
     python get-pip.py --user
+    echo "export PATH=~/Library/Python/2.7/bin" >> ~/.bash_profile
     echo "installing awscli"
     pip install --user --upgrade awscli
     echo "installing rust"
     curl https://sh.rustup.rs -sSf | sh
-    echo "export PATH=~/.cargo/bin:$PATH" >> ~/.bash_profile
-    source ~/.bash_profile
+    #echo "export PATH=~/.cargo/bin:$PATH" >> ~/.bash_profile
+    #source ~/.bash_profile
     cargo install rustmft racer
     echo "downloading atom"
-    wget https://atom.io/download/mac
+    wget -O atom-mac.zip https://atom.io/download/mac
     unzip atom-mac.zip
-    mv Atom.app "/Volumes/Macintosh HD/Applications"
+    mv Atom.app /Applications
+    ln -s /usr/local/bin/apm /Applications/Atom.app/Contents/Resources/app/apm/node_modules/.bin/apm
+    ln -s /usr/local/bin/atom /Applications/Atom.app/Contents/Resources/app/atom.sh
+    cd ~/Downloads
+    apm install aligner-php atom-beautify atom-format-lua auto-detect-indentation autoclose-html autocomplete-php color-picker emmet file-icons highlight-line highlight-selected language-lua linter linter-csslint linter-eslint linter-htmlhint linter-js-yaml linter-jshint linter-lua linter-php linter-phpcs linter-phpmd linter-scss-lint linter-tidy linter-xmllint livereload minimap minimap-highlight-selected open-recent pigments platformio-ide-terminal project-manager rest-client todo-show wordpress-api seti-ui monokai-seti remote-sync racer custom-folds compare-files
+    echo "downloading discord"
+    wget -O Discord.dmg https://discordapp.com/api/download?platform=osx
+    hdiutil mount Discord.dmg
+    sudo cp -R /Volumes/Discord/Discord.app /Applications
+    hdiutil unmount /Volumes/Discord
+    
   ;;
   linux*)   echo "LINUX" ;;
   bsd*)     echo "BSD" ;;
