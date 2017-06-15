@@ -60,13 +60,13 @@ case "$OSTYPE" in
     sudo cp -R "/Volumes/Google Chrome/Google Chrome.app" /Applications
     hdiutil unmount "/Volumes/Google Chrome"
     echo "installing firefox"
-    wget -O "~/Downloads/Firefox 54.0.dmg" https://download.mozilla.org/?product=firefox-54.0-SSL&amp;os=osx&amp;lang=en-US
-    hdiutil mount "~/Downloads/Firefox 54.0.dmg"
+    wget -O ~/Downloads/Firefox\ 54.0.dmg http://download-origin.cdn.mozilla.net/pub/firefox/releases/54.0/mac/en-US/Firefox%2054.0.dmg
+    hdiutil mount ~/Downloads/Firefox\ 54.0.dmg
     sudo cp -R "/Volumes/Firefox/Firefox.app" /Applications
     hdiutil unmount "/Volumes/Firefox"
     echo "installing mysql workbench"
     wget -O ~/Downloads/mysql-workbench-community-6.3.9-osx-x86_64.dmg https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-osx-x86_64.dmg
-    hdiutil mount ~/Downloads/mysql.dmg
+    hdiutil mount ~/Downloads/mysql-workbench-community-6.3.9-osx-x86_64.dmg
     sudo cp -R "/Volumes/MySQL Workbench 6.3.9.CE/MySQLWorkbench.app" /Applications
     hdiutil unmount "/Volumes/MySQL Workbench 6.3.9.CE"
     rm -rf ~/Downloads/*.dmg
