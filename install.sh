@@ -39,7 +39,7 @@ case "$OSTYPE" in
     echo "installing rust"
     curl https://sh.rustup.rs -sSf | sh
     #echo "export PATH=~/.cargo/bin:$PATH" >> ~/.bash_profile
-    #source ~/.bash_profile
+    source ~/.bash_profile
     cargo install rustmft racer
     echo "downloading atom"
     wget -O atom-mac.zip https://atom.io/download/mac
