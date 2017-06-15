@@ -31,9 +31,11 @@ case "$OSTYPE" in
     echo "installing pip"
     curl -O https://bootstrap.pypa.io/get-pip.py
     python get-pip.py --user
-    echo "export PATH=~/Library/Python/2.7/bin" >> ~/.bash_profile
+    echo "export PATH=~/Library/Python/2.7/bin:$PATH" >> ~/.bash_profile
     echo "installing awscli"
-    pip install --user --upgrade awscli
+    brew install awscli
+    "install awsebcli"
+    brew install awsebcli
     echo "installing rust"
     curl https://sh.rustup.rs -sSf | sh
     #echo "export PATH=~/.cargo/bin:$PATH" >> ~/.bash_profile
@@ -52,7 +54,25 @@ case "$OSTYPE" in
     hdiutil mount Discord.dmg
     sudo cp -R /Volumes/Discord/Discord.app /Applications
     hdiutil unmount /Volumes/Discord
-    
+    rm -rf ~/Downloads/Discord.dmg
+    echo "installing google chrome"
+    wget -O googlechrome.dmg https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+    hdiutil mount googlechrome.dmg
+    sudo cp -R "/Volumes/Google Chrome/Google Chrome.app" /Applications
+    hdiutil unmount "/Volumes/Google Chrome"
+    rm -rf ~/Downloads/googlechrome.dmg
+    echo "installing firefox"
+    wget -O firefox.dmg https://download.mozilla.org/?product=firefox-54.0-SSL&amp;os=osx&amp;lang=en-US
+    hdiutil mount firefox.dmg
+    sudo cp -R "/Volumes/Firefox/Firefox.app" /Applications
+    hdiutil unmount "/Volumes/Firefox"
+    rm -rf ~/Downloads/firefox.dmg
+    echo "installing mysql workbench"
+    wget -O msql.dmg https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.9-osx-x86_64.dmg
+    hdiutil mount mysql.dmg
+    sudo cp -R "/Volumes/MySQL Workbench 6.3.9.CE/MySQLWorkbench.app" /Applications
+    hdiutil unmount "/Volumes/MySQL Workbench 6.3.9.CE"
+    rm -rf ~/Downloads/mysql.dmg
   ;;
   linux*)   echo "LINUX" ;;
   bsd*)     echo "BSD" ;;
