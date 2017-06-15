@@ -42,6 +42,8 @@ case "$OSTYPE" in
     source ~/.bash_profile
     rustup component add rust-src
     cargo install rustmft racer
+    echo "export RUST_SRC_PATH=~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src" >> ~/.bash_profile
+    source ~/.bash_profile
     echo "downloading atom"
     wget -O atom-mac.zip https://atom.io/download/mac
     unzip atom-mac.zip
