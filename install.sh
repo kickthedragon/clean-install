@@ -40,6 +40,7 @@ case "$OSTYPE" in
     curl https://sh.rustup.rs -sSf | sh
     #echo "export PATH=~/.cargo/bin:$PATH" >> ~/.bash_profile
     source ~/.bash_profile
+    rustup component add rust-src
     cargo install rustmft racer
     echo "downloading atom"
     wget -O atom-mac.zip https://atom.io/download/mac
