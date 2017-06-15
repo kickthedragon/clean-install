@@ -48,7 +48,7 @@ case "$OSTYPE" in
     ln -s /usr/local/bin/apm /Applications/Atom.app/Contents/Resources/app/apm/node_modules/.bin/apm
     ln -s /usr/local/bin/atom /Applications/Atom.app/Contents/Resources/app/atom.sh
     cd ~/Downloads
-    apm install aligner-php atom-beautify atom-format-lua auto-detect-indentation autoclose-html autocomplete-php color-picker emmet file-icons highlight-line highlight-selected language-lua linter linter-csslint linter-eslint linter-htmlhint linter-js-yaml linter-jshint linter-lua linter-php linter-phpcs linter-phpmd linter-scss-lint linter-tidy linter-xmllint livereload minimap minimap-highlight-selected open-recent pigments platformio-ide-terminal project-manager rest-client todo-show wordpress-api seti-ui monokai-seti remote-sync racer custom-folds compare-files autoprefixer
+    apm install aligner-php atom-beautify atom-format-lua auto-detect-indentation autoclose-html autocomplete-php color-picker emmet file-icons highlight-line highlight-selected language-lua linter linter-csslint linter-eslint linter-htmlhint linter-js-yaml linter-jshint linter-lua linter-php linter-phpcs linter-phpmd linter-scss-lint linter-tidy linter-xmllint minimap minimap-highlight-selected open-recent pigments platformio-ide-terminal project-manager rest-client todo-show wordpress-api seti-ui monokai-seti remote-sync racer custom-folds compare-files autoprefixer
     echo "downloading discord"
     wget -O Discord.dmg https://discordapp.com/api/download?platform=osx
     hdiutil mount Discord.dmg
